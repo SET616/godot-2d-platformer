@@ -1,0 +1,26 @@
+# Godot 4+
+.godot/
+.import/
+export_presets.cfg
+*.gen.*
+
+# Метаданные редактора
+.mono/
+.metadata
+
+# Временные файлы
+*.tmp
+*.~
+
+# Системные файлы ОС
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Логи
+logs/
+*.log
+
+# Скомпилированные проекты
+export/
+build/
