@@ -1,22 +1,96 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf3wnwihk7ymg"]
+[gd_scene format=3 uid="uid://bf3wnwihk7ymg"]
 
-[ext_resource type="Script" path="res://game.gd" id="2"]
+[ext_resource type="Script" uid="uid://bu5roubif6wmg" path="res://game.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://ctgumjaytuoch" path="res://level/level.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://c7ai4bigaryci" path="res://gui/pause_menu_singleplayer.tscn" id="4_x6l06"]
+[ext_resource type="PackedScene" uid="uid://6mtip3ruyn" path="res://enemy/enemy.tscn" id="5_hsw1h"]
+[ext_resource type="PackedScene" uid="uid://c3dh7xb6ef76q" path="res://level/coin.tscn" id="6_7ocom"]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" unique_id=1025088772]
 process_mode = 3
 script = ExtResource("2")
 
-[node name="Level" parent="." instance=ExtResource("3")]
+[node name="Level" parent="." unique_id=1189279846 instance=ExtResource("3")]
 
-[node name="Player" parent="Level" instance=ExtResource("4")]
+[node name="Player" parent="Level" unique_id=1848052927 instance=ExtResource("4")]
 position = Vector2(90, 546)
 
-[node name="InterfaceLayer" type="CanvasLayer" parent="."]
+[node name="InterfaceLayer" type="CanvasLayer" parent="." unique_id=386080704]
 layer = 100
 
-[node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("4_x6l06")]
+[node name="PauseMenu" parent="InterfaceLayer" unique_id=1001527489 instance=ExtResource("4_x6l06")]
+
+[node name="Enemy" parent="." unique_id=2124491744 instance=ExtResource("5_hsw1h")]
+position = Vector2(174, 427)
+
+[node name="Enemy2" parent="." unique_id=291880388 instance=ExtResource("5_hsw1h")]
+position = Vector2(216, 625)
+
+[node name="Enemy3" parent="." unique_id=2121129651 instance=ExtResource("5_hsw1h")]
+position = Vector2(-648, -11)
+
+[node name="Enemy4" parent="." unique_id=1844367716 instance=ExtResource("5_hsw1h")]
+position = Vector2(-486, -12)
+
+[node name="Coin" parent="." unique_id=1731849738 instance=ExtResource("6_7ocom")]
+position = Vector2(-642, -54)
+
+[node name="Coin2" parent="." unique_id=1910073949 instance=ExtResource("6_7ocom")]
+position = Vector2(-581, -100)
+
+[node name="Coin3" parent="." unique_id=644781800 instance=ExtResource("6_7ocom")]
+position = Vector2(-525, -46)
+
+[node name="Coin4" parent="." unique_id=814322929 instance=ExtResource("6_7ocom")]
+position = Vector2(-457, -103)
+
+[node name="Coin5" parent="." unique_id=403172718 instance=ExtResource("6_7ocom")]
+position = Vector2(-375, -28)
+
+[node name="Coin6" parent="." unique_id=1841826457 instance=ExtResource("6_7ocom")]
+position = Vector2(-317, -105)
+
+[node name="Coin7" parent="." unique_id=550227918 instance=ExtResource("6_7ocom")]
+position = Vector2(-248, -25)
+
+[node name="Coin8" parent="." unique_id=1367163593 instance=ExtResource("6_7ocom")]
+position = Vector2(-166, 195)
+
+[node name="Coin9" parent="." unique_id=1648002869 instance=ExtResource("6_7ocom")]
+position = Vector2(94, 262)
+
+[node name="Coin10" parent="." unique_id=73274175 instance=ExtResource("6_7ocom")]
+position = Vector2(232, 268)
+
+[node name="Coin11" parent="." unique_id=1665289116 instance=ExtResource("6_7ocom")]
+position = Vector2(410, 155)
+
+[node name="Coin12" parent="." unique_id=1227051332 instance=ExtResource("6_7ocom")]
+position = Vector2(454, 156)
+
+[node name="Coin13" parent="." unique_id=1499638404 instance=ExtResource("6_7ocom")]
+position = Vector2(496, 153)
+
+[node name="Coin14" parent="." unique_id=1365632048 instance=ExtResource("6_7ocom")]
+position = Vector2(533, 161)
+
+[node name="Coin15" parent="." unique_id=1871095516 instance=ExtResource("6_7ocom")]
+position = Vector2(935, -54)
+
+[node name="Coin16" parent="." unique_id=1750899586 instance=ExtResource("6_7ocom")]
+position = Vector2(1079, -61)
+
+[node name="Coin17" parent="." unique_id=198854391 instance=ExtResource("6_7ocom")]
+position = Vector2(1207, -55)
+
+[node name="Coin18" parent="." unique_id=1065275059 instance=ExtResource("6_7ocom")]
+position = Vector2(1315, -49)
+
+[node name="Enemy5" parent="." unique_id=1920950071 instance=ExtResource("5_hsw1h")]
+position = Vector2(1356, -14)
+
+[node name="Enemy6" parent="." unique_id=1989561917 instance=ExtResource("5_hsw1h")]
+position = Vector2(1074, -13)
 
 [connection signal="coin_collected" from="Level/Player" to="InterfaceLayer/PauseMenu" method="_on_coin_collected"]
