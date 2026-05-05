@@ -4,9 +4,6 @@ on:
   push:
     branches: [ main ]
 
-env:
-  GODOT_VERSION: 4.2.2
-
 jobs:
   export-game:
     runs-on: ubuntu-latest
@@ -19,12 +16,11 @@ jobs:
 
       - name: Godot Export
         id: export
-        uses: firebelley/godot-export@v6.0.0
+        uses: abarichello/godot-ci@v1
         with:
-          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/${{ env.GODOT_VERSION }}/Godot_v${{ env.GODOT_VERSION }}-stable_linux_headless.x86_64.zip
-          godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/${{ env.GODOT_VERSION }}/Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
+          godot_version: 4.6.1
+          export_template_version: 4.6.1
           relative_project_path: ./
-          cache: true
 
       - name: Create Release
         uses: ncipollo/release-action@v1.18.0
